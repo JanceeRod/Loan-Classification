@@ -1,5 +1,7 @@
-## Logisitc Classification Project
+# Logisitc Classification Project
 In this personal project, we are going to use a dataset that contains loan details for those people who have applied for loans. This dataset has 14 columns, with the last column as the label if wether or not a sample applicant got approved or not.
+
+Dataset is taken from [kaggle](https://www.kaggle.com/datasets/taweilo/loan-approval-classification-data).
 
 
 ```python
@@ -11,7 +13,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 ```
 
-## Understand Your Data
+# Understand Your Data
 - Define the Objective:
     - Clearly identify the problem you're solving (classification, regression, etc.).
     - Understand the type of data you have (structured, unstructured, images, text, etc.).
@@ -309,7 +311,7 @@ dataset.describe()
 
 
 
-## Visualize Data
+# Visualize Data
 This code snippet generates count plots to visualize the relationship between categorical features and the target variable, loan_status.
 
 It defines a function create_countplots for creating multiple count plots efficiently.  The function takes the data, a list of columns to plot, the hue (used for grouping), and the figure size as input. It then iterates through the specified columns, creating a count plot for each, setting appropriate labels and titles.
@@ -354,7 +356,7 @@ plt.show()
     
 
 
-## Identify Missing Values
+# Identify Missing Values
 In here, we try to determine if our dataset has any null values or columns/rows that have empty values. Certain machine learning models are sensitive to null values and therefore its important to anticipate this early.
 
 Luckily, the dataset we have doesn't have null values and so we can proceed to feature engineering directly.
@@ -372,8 +374,8 @@ dataset.columns[dataset.isnull().any()]    # Selects the column names where ther
 
 
 
-## Feature Engineering
-### Scaling & Normalization
+# Feature Engineering
+## Scaling & Normalization
 Standardization is a crucial preprocessing step, especially for algorithms sensitive to feature scaling (like K-Nearest Neighbors, Support Vector Machines, etc.).  It transforms the numerical features to have zero mean and unit variance.
 
 
@@ -417,7 +419,7 @@ print(df_scaled.head())
     4                             No            1  
     
 
-### One-Hot Encoding
+## One-Hot Encoding
 Some parts of our features (columns) are not necessarily in number format. However, we still want the option to be able to use them. With that, we'll use OneHotEncoder to do one hot encoding to our data.
 - One Hot Encoding converts our categorical columns into numerical by creating new columns and setting the correct column associated with the data sample into 1.
 
@@ -609,7 +611,7 @@ df_scaled_onehot.head()
 
 
 
-## Mutual Information & Relationships
+# Mutual Information & Relationships
 Mutual Information measures the mutual dependence between two random variables.  In this context, it quantifies how much information the presence or absence of a particular feature provides about the loan status. 
 
 A higher MI score indicates a stronger relationship between the feature and the target variable, meaning the feature is more informative for predicting the loan status.  It essentially measures the reduction in uncertainty about the target variable given the knowledge of the feature variable.
@@ -660,12 +662,12 @@ print(mi_results)
     13        person_education_High School  0.000000
     
 
-## Logistic Regression
+# Logistic Regression
 Logistic Regression is a linear model used for binary classification tasks.  It predicts the probability of a data point belonging to a certain category (e.g., yes/no, 0/1).  
 
 Instead of directly outputting a class, it outputs a probability between 0 and 1, which is then used to make a classification decision based on a chosen threshold.  Despite its name, it's a classification algorithm, not a regression algorithm.
 
-### Splitting the data
+## Splitting the data
 
 Splitting our dataset is a good practice to do, especially in data science tasks, as it can help us evaluate the performance of our machine learning models on unseen data.  This prevents us from overfitting to the training data, where the model performs exceptionally well on the data it has seen but poorly on new, unseen data.  A common approach is to split the data into three sets:
 
@@ -682,7 +684,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 ```
 
-### Model Specifications
+## Model Specifications
 
 
 ```python
@@ -714,7 +716,7 @@ print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
      [ 519 1491]]
     
 
-## Random Forests
+# Random Forests
 Random Forests are a popular and versatile ensemble learning method used for both classification and regression tasks.  They operate by constructing a multitude of decision trees at training time and outputting the class that is the mode of the classes (classification) or mean/average prediction (regression) of the individual trees.  The "random" aspect comes from two key elements:
 
 *   **Bagging (Bootstrap Aggregating):** Each tree is trained on a random subset of the training data, sampled with replacement.  This introduces diversity among the trees.
@@ -751,7 +753,7 @@ print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
      [ 457 1553]]
     
 
-### Feature Importance
+## Feature Importance
 
 One great thing about Random Forests is that they keep track of the variables that appear to be important in making predictions.  This provides a measure of feature importance, which can be very valuable for understanding the underlying data and the model's behavior.  
 
@@ -776,7 +778,7 @@ plt.show()
     
 
 
-## Simple Neural Network
+# Simple Neural Network
 Neural Networks are a class of machine learning models inspired by the structure and function of the human brain.  They consist of interconnected nodes, or neurons, organized in layers.  The basic unit of a neural network is the neuron, which receives input signals, processes them, and sends an output signal.
 
 A neural network generally has these main components:
