@@ -42,23 +42,6 @@ Its importan to have an idea as to how our data looks like before we do any type
 dataset.head()
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -167,7 +150,7 @@ dataset.head()
     </tr>
   </tbody>
 </table>
-</div>
+
 
 
 
@@ -440,21 +423,6 @@ df_scaled_onehot.head()
 ```
 
 
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -606,7 +574,7 @@ df_scaled_onehot.head()
   </tbody>
 </table>
 <p>5 rows × 28 columns</p>
-</div>
+
 
 
 
