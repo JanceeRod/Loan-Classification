@@ -945,6 +945,6 @@ plt.show()
 
 
 
-```python
-
-```
+At the end the model achieved the following accuracies for test and training set:
+- Final Train Accuracy: 0.9210
+- Final Test Accuracy: 0.9180
